@@ -1,1 +1,16 @@
-<p>login works!</p>
+<ng-container *ngIf="isFirstStep; else congrats;">
+  <app-login-header #header></app-login-header>
+  <app-login-body></app-login-body>
+  <app-login-footer></app-login-footer>
+  <app-main-button
+    [name]="'Cambiame el nombre'" (action)="header.title = 'Nuevo titulo'"
+  ></app-main-button>
+</ng-container>
+<ng-template #congrats>
+  <app-login-congrats></app-login-congrats>
+</ng-template>
+
+<app-main-button
+  [name]="isFirstStep ? 'Enviar formulario' : 'Regresar'" (action)="isFirstStep = !isFirstStep"
+></app-main-button>
+
