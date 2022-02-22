@@ -1,0 +1,24 @@
+<h3>Contador {{homeService.contador}}</h3>
+<app-main-button
+  [name]="'Incrementar valor'" (action)="homeService.increment()"
+></app-main-button>
+<h1>NgSwitch</h1>
+<ng-container [ngSwitch]="homeService.contador">
+  <ng-container *ngSwitchCase="1">
+    <h1>Caso A</h1>
+  </ng-container>
+  <ng-container *ngSwitchCase="2">
+    <h1>Caso B</h1>
+  </ng-container>
+  <ng-container *ngSwitchDefault>
+    <h1>Caso C</h1>
+  </ng-container>
+</ng-container>
+
+<h1>NgFor</h1>
+<ng-container *ngFor="let a of homeService.getUsers;let i = index;">
+  <h3>id: {{i + 1}} - Nombre: {{a.name | enum}}, Edad: {{a.age}}, Cumpleaños: {{a.birthDate | date: "MMM d, y"}}, Salario: {{a.salary | currency}}</h3>
+</ng-container>
+
+
+

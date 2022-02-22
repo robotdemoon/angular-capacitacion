@@ -1,9 +1,17 @@
 <ng-container *ngIf="isFirstStep; else congrats;">
-  <app-login-header #header></app-login-header>
+  <app-login-header #header>
+      <ng-container title>
+        <h1>Mi formulario</h1>
+      </ng-container>
+      <ng-container subtitle>
+        <h3>Favor de llenar los datos</h3>
+      </ng-container>
+  </app-login-header>
   <app-login-body></app-login-body>
   <app-login-footer></app-login-footer>
+  <h3>Contador {{homeService.contador}}</h3>
   <app-main-button
-    [name]="'Cambiame el nombre'" (action)="header.title = 'Nuevo titulo'"
+    [name]="'Incrementar valor'" (action)="homeService.increment()"
   ></app-main-button>
 </ng-container>
 <ng-template #congrats>

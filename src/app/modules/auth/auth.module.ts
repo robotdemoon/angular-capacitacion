@@ -6,6 +6,7 @@ import { LoginHeaderComponent } from './sections/login/components/login-header/l
 import { LoginBodyComponent } from './sections/login/components/login-body/login-body.component';
 import { LoginFooterComponent } from './sections/login/components/login-footer/login-footer.component';
 import { LoginCongratsComponent } from './sections/login/components/login-congrats/login-congrats.component';
+import { RegisterComponent } from './sections/register/register.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { LoginCongratsComponent } from './sections/login/components/login-congra
     LoginHeaderComponent,
     LoginBodyComponent,
     LoginFooterComponent,
-    LoginCongratsComponent
+    LoginCongratsComponent,
+    RegisterComponent
   ],
   imports: [
     SharedModule,
